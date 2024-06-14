@@ -1,0 +1,49 @@
+<section class="main-sec">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of apiData">
+          <td>{{ item.title }}</td>
+          <td>
+            <button class="btn btn-delete btn-danger" (click)="deleteItem(item.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="form">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <h1>Add Form</h1>
+      <input
+        type="text"
+        placeholder="Title"
+        name="title"
+        formControlName="title"
+        required
+      />
+      <div
+        *ngIf="
+          myForm.get('title')?.invalid &&
+          (myForm.get('title')?.touched || myForm.get('title')?.dirty)
+        "
+      >
+        <div *ngIf="myForm.get('title')?.errors">
+            <span class="error" *ngFor="let error of myForm.get('title')?.errors | keyvalue">
+              Title is Required!
+            </span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-submit">Upload</button>
+    </form>
+  </div>
+</section>
+<router-outlet></router-outlet>

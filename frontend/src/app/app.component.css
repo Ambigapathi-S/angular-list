@@ -1,0 +1,61 @@
+.table-responsive {
+    overflow-x: hidden;
+    width: 50%;
+    display: inline-block;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.table {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.table tr th,
+.table tr td {
+    text-align: left;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.form {
+    display: inline-block;
+    width: 50%;
+}
+
+.main-sec {
+    display: flex;
+    gap: 10px;
+}
+
+.main-sec .form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+}
+
+button.btn {
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.main-sec .form input {
+    padding: 10px;
+    font-size: 15px;
+}
+
+button.btn.btn-delete {
+    background-color: red;
+    color: #fff;
+    border: none;
+}
+
+button.btn.btn-submit {
+    background-color: green;
+    color: #fff;
+    border: none;
+    width: 200px;
+    display: inline-block;;
+}
